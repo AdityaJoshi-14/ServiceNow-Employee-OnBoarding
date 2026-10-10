@@ -1,0 +1,12 @@
+department,task_name,assigned_group,due_days_before_start,applies_when,active
+all,Create email account,IT Support,3,always,true
+all,Collect joining documents,HR Operations,5,always,true
+all,Schedule orientation session,HR Operations,2,always,true
+all,Set up payroll record,HR Operations,3,always,true
+all,Issue laptop,IT Support,2,laptop_needed,true
+all,Install required software,IT Support,1,software_needed,true
+all,Allocate desk and access card,Facilities_Employee,2,desk_needed,true
+engineering,Provision GitHub and VPN access,IT Support,2,always,true
+sales,Provision CRM access,IT Support,2,always,true
+finance,Provision ERP access,IT Support,2,always,true
+marketing,Provision design tool and CMS access,IT Support,2,always,true
