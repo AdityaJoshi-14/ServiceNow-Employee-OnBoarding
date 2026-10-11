@@ -87,3 +87,9 @@ Display column: **Name**
 | software_list | List Collector > Software Option | No, shown when `needs_software` is true |
 | needs_desk | Yes/No | No |
 | office_location | Select Box | No, shown when `needs_desk` is true |
+
+### Behaviour
+
+- **Department** reads its choices from the Department field on Onboarding Task Template, so the form and the task rules share one source. The `all` choice means "every department" on the template table, so it is removed on load ([hide-all-department-option.js](../scripts/client-scripts/hide-all-department-option.js)) and rejected on submit ([reject-all-department.js](../scripts/client-scripts/reject-all-department.js)).
+- **Start Date** rejects dates in the past ([validate-start-date.js](../scripts/client-scripts/validate-start-date.js)).
+- **Laptop Type, Software List and Office Location** are shown and required by three Catalog UI Policies with Reverse if false, so they hide again when the answer goes back to No.

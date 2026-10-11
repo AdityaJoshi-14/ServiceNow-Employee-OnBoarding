@@ -6,7 +6,7 @@
 
 ![ServiceNow](https://img.shields.io/badge/ServiceNow-Scoped_App-62D84E?logo=servicenow&logoColor=white)
 ![Status](https://img.shields.io/badge/status-in_progress-orange)
-![Sprint](https://img.shields.io/badge/sprint-1_of_3-blue)
+![Sprints](https://img.shields.io/badge/sprints-1_of_3_complete-blue)
 ![License](https://img.shields.io/badge/license-MIT-lightgrey)
 
 </div>
@@ -23,7 +23,7 @@ Built as a self-directed project on a ServiceNow Personal Developer Instance (PD
 
 | Sprint | Dates | Focus | Status |
 |---|---|---|---|
-| 1 | Oct 10 - 11, 2026 | Foundation and catalog item | In progress (data model and seed data done) |
+| 1 | Oct 10 - 11, 2026 | Foundation and catalog item | Complete |
 | 2 | Oct 12 - 14, 2026 | Automation with Flow Designer | Planned |
 | 3 | Oct 15 - 16, 2026 | Security, reporting and publish | Planned |
 
@@ -47,6 +47,18 @@ flowchart LR
 3. On approval, a flow reads the **Onboarding Task Template** table and creates one catalog task per matching template, assigned to the right group.
 4. Due dates are calculated from the start date and each template's lead time.
 5. Closing the laptop task records the device in **Employee Asset**.
+
+> Sprint 1 delivers the data model and the request form. Steps 2 to 5 are built in Sprint 2.
+
+## Request Form
+
+The **New Hire Onboarding** catalog item captures 11 variables ([details](docs/data-model.md#catalog-variables-new-hire-onboarding)).
+
+- **Conditional fields:** three Catalog UI Policies show and require Laptop Type, Software List or Office Location only when the matching Yes/No answer is Yes.
+- **Date validation:** a Catalog Client Script clears a start date in the past.
+- **One source for departments:** the Department dropdown reads its choices from the Department field on the Onboarding Task Template table, so the form and the task rules cannot drift apart. `all` exists there to mean every department, so it is hidden on load and rejected on submit.
+
+Scripts are in [scripts/client-scripts](scripts/client-scripts/).
 
 ## Data Model
 
@@ -80,7 +92,10 @@ servicenow-employee-onboarding/
 │   └── software_options.csv
 ├── scripts/
 │   └── client-scripts/
-│       └── validate-start-date.js
+│       ├── validate-start-date.js
+│       ├── hide-all-department-option.js
+│       ├── reject-all-department.js
+│       └── README.md
 └── update-sets/             Exported per sprint (sprint-1.xml, ...)
 ```
 
@@ -105,7 +120,7 @@ More detail on exporting and importing: [update-sets/README.md](update-sets/READ
 
 - [x] Scoped application and data model (Sprint 1)
 - [x] Seed data for task templates and software options (Sprint 1)
-- [ ] Catalog item with variables, UI policies and date validation (Sprint 1)
+- [x] Catalog item with variables, UI policies and date validation (Sprint 1)
 - [ ] Approval, task creation and notifications in Flow Designer (Sprint 2)
 - [ ] Script Include for due dates and asset record creation (Sprint 2)
 - [ ] Overdue reminders, roles and ACLs, reports and dashboard (Sprint 3)
@@ -124,7 +139,15 @@ More detail on exporting and importing: [update-sets/README.md](update-sets/READ
 |---|---|
 | ![Software Option table](docs/screenshots/sprint1-table-software-option.png) | ![Seeded task templates](docs/screenshots/sprint1-seed-task-templates.png) |
 
-More are added to [docs/screenshots/](docs/screenshots/) as each sprint completes: catalog form, flow canvas, generated tasks and the dashboard.
+### Sprint 1: catalog item
+
+| Request form | Request submitted |
+|---|---|
+| ![Catalog form](docs/screenshots/sprint1-catalog-form.png) | ![Order submitted](docs/screenshots/sprint1-order-submitted.png) |
+
+![Requested item with captured variables](docs/screenshots/sprint1-ritm-variables.png)
+
+More are added to [docs/screenshots/](docs/screenshots/) as each sprint completes: flow canvas, generated tasks and the dashboard.
 
 ## Author
 

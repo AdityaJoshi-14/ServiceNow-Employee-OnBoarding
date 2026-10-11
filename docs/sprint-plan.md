@@ -4,7 +4,7 @@ Start: Sat, Oct 10, 2026 | Finish: Fri, Oct 16, 2026
 
 | Sprint | Dates | Focus | Status |
 |---|---|---|---|
-| 1 | Oct 10 - 11 | Foundation and catalog item | In progress (Day 1 done) |
+| 1 | Oct 10 - 11 | Foundation and catalog item | Complete |
 | 2 | Oct 12 - 14 | Automation with Flow Designer | Planned |
 | 3 | Oct 15 - 16 | Security, reporting and publish | Planned |
 
@@ -29,19 +29,19 @@ If time runs short, cut in this order: offboarding, dashboard, scheduled job. Th
 
 ### Day 2 (Sun, Oct 11): Catalog item
 
-- [ ] Create category **Employee Services**
-- [ ] Create catalog item **New Hire Onboarding** (fulfillment group empty; the flow assigns tasks)
-- [ ] Add the variables below, in order
-- [ ] Add 3 Catalog UI Policies (Reverse if false and Clear value ticked)
-- [ ] Add the Catalog Client Script for start date validation ([script](../scripts/client-scripts/validate-start-date.js))
-- [ ] Test in the Service Portal and verify the RITM captures every answer
-- [ ] Mark `Onboarding - Sprint 1` Complete and export to XML
-- [ ] Take screenshots (catalog form, validation error, RITM with variables)
+- [x] Create category **Employee Services**
+- [x] Create catalog item **New Hire Onboarding** (fulfillment group empty; the flow assigns tasks)
+- [x] Add the variables below, in order
+- [x] Add 3 Catalog UI Policies (Reverse if false ticked)
+- [x] Add 3 Catalog Client Scripts: start date validation, hide All department option, reject All on submit ([scripts](../scripts/client-scripts/))
+- [x] Test the form and verify the RITM captures every answer
+- [x] Mark `Onboarding - Sprint 1` Complete and export to XML
+- [x] Take screenshots (catalog form, order confirmation, RITM with variables)
 
 | Variable | Type | Mandatory |
 |---|---|---|
 | employee_name | Single Line Text | Yes |
-| department | Select Box (Engineering, HR, Finance, Sales, Marketing) | Yes |
+| department | Select Box (choices come from the template table's Department field) | Yes |
 | job_title | Single Line Text | Yes |
 | start_date | Date | Yes |
 | hiring_manager | Reference > User | Yes |
@@ -57,6 +57,12 @@ UI Policies:
 - `needs_laptop` is true: show and require `laptop_type`
 - `needs_software` is true: show and require `software_list`
 - `needs_desk` is true: show and require `office_location`
+
+Client scripts:
+
+- `start_date` onChange: clear a date in the past
+- Department onLoad: hide the "All" option
+- Department onSubmit: reject "All"
 
 **Done when:** a submitted request creates a RITM with every variable value captured.
 

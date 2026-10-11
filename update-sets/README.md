@@ -4,7 +4,7 @@ One update set per sprint, exported from the PDI once the sprint is finished.
 
 | File | Sprint | Contents | Status |
 |---|---|---|---|
-| `sprint-1.xml` | 1 | Scoped app, three tables, catalog item, UI policies, client script | Pending (export after Day 2) |
+| `sprint-1.xml` | 1 | Scoped app, three tables, catalog item, UI policies, client scripts | Complete |
 | `sprint-2.xml` | 2 | Flow, Script Include, Business Rule, notifications | Planned |
 | `sprint-3.xml` | 3 | Scheduled job, roles and ACLs, reports, dashboard | Planned |
 
