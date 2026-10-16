@@ -5,7 +5,7 @@ Start: Sat, Oct 10, 2026 | Finish: Fri, Oct 16, 2026
 | Sprint | Dates | Focus | Status |
 |---|---|---|---|
 | 1 | Oct 10 - 11 | Foundation and catalog item | Complete |
-| 2 | Oct 12 - 14 | Automation with Flow Designer | Planned |
+| 2 | Oct 12 - 15 | Automation with Flow Designer | Complete |
 | 3 | Oct 15 - 16 | Security, reporting and publish | Planned |
 
 If time runs short, cut in this order: offboarding, dashboard, scheduled job. The catalog item, flow and asset table are the core.
@@ -68,36 +68,40 @@ Client scripts:
 
 ---
 
-## Sprint 2: Automation (Oct 12 - 14)
+## Sprint 2: Automation (Oct 12 - 15)
 
 Create update set `Onboarding - Sprint 2` (Application = Employee Onboarding) before starting.
 
 ### Day 3 (Mon, Oct 12): Flow, approval, rejection path
 
-- [ ] Create a flow with trigger **Service Catalog** (item = New Hire Onboarding)
-- [ ] Add an **Ask for Approval** action, approver = `hiring_manager`
-- [ ] Approved path: continue to task creation (Day 4)
-- [ ] Rejected path: notify the requester with the reason and close the request
-- [ ] Test the approve and reject paths with the test users (Impersonate)
+- [x] Create a flow with trigger **Service Catalog** (item = New Hire Onboarding)
+- [x] Add an **Ask for Approval** action, approver = `hiring_manager`
+- [x] Approved path: continue to task creation (Day 4)
+- [x] Rejected path: notify the requester with the reason and close the request
+- [x] Test the approve and reject paths with the test users (Impersonate)
 
 ### Day 4 (Tue, Oct 13): Task creation and notifications
 
-- [ ] **Look Up Records** on Onboarding Task Template: Active is true and Department is All or the requested department
-- [ ] **For Each** template record, add If conditions for Applies When (Always, or the matching Yes/No variable is true)
-- [ ] **Create Catalog Task** inside the loop: short description from Task Name, assignment group from Assigned Group, due date from the Script Include
-- [ ] Notify the hiring manager when tasks are created, and each group when a task is assigned
-- [ ] Test with laptop, software and desk all Yes, then all No
+- [x] **Look Up Records** on Onboarding Task Template: Active is true and Department is All or the requested department
+- [x] **For Each** template record, add If conditions for Applies When (Always, or the matching Yes/No variable is true)
+- [x] **Create Catalog Task** inside the loop: short description from Task Name, assignment group from Assigned Group, due date from the Script Include
+- [x] Notify the hiring manager when tasks are created, and each group when a task is assigned
+- [x] Test with laptop, software and desk all Yes, then all No
 
 ### Day 5 (Wed, Oct 14): Script Include, Business Rule, end-to-end test
 
-- [ ] Script Include `OnboardingUtils` returning the due date (start date minus Due Days Before Start)
-- [ ] Wire the flow to use it for task due dates
-- [ ] Business Rule on Catalog Task: when "Issue laptop" closes, create an Employee Asset record (Status = Issued, Issued Date = today)
-- [ ] Full end-to-end test: one request produces the right tasks, assignments, notifications and asset record
-- [ ] Mark `Onboarding - Sprint 2` Complete and export to XML
-- [ ] Take screenshots (flow canvas, execution details, generated tasks, asset record)
+- [x] Script Include `OnboardingUtils` returning the due date (start date minus Due Days Before Start)
+- [x] Wire the flow to use it for task due dates
+- [x] Business Rule on Catalog Task: when "Issue laptop" closes, create an Employee Asset record (Status = Issued, Issued Date = today)
+- [x] Full end-to-end test: one request produces the right tasks, assignments, notifications and asset record
+- [x] Mark `Onboarding - Sprint 2` Complete and export to XML
+- [x] Take screenshots (flow canvas, execution details, generated tasks, asset record)
+
+- [x] Added beyond the plan: Business Rule that closes the request when its last task closes (feeds the completion-time report)
 
 **Done when:** one catalog request creates the correct tasks and asset record with no manual steps.
+
+Notes: the due date is wrapped in a custom flow action because Flow Designer cannot call a Script Include directly. Group notification is a Send Email step in the loop; ServiceNow's stock assignment notification also fires. See [flow.md](flow.md).
 
 ---
 

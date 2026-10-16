@@ -5,7 +5,7 @@ One update set per sprint, exported from the PDI once the sprint is finished.
 | File | Sprint | Contents | Status |
 |---|---|---|---|
 | `sprint-1.xml` | 1 | Scoped app, three tables, catalog item, UI policies, client scripts | Complete |
-| `sprint-2.xml` | 2 | Flow, Script Include, Business Rule, notifications | Planned |
+| `sprint-2.xml` | 2 | Flow, flow action, Script Include, Business Rules, cross-scope privileges | Complete |
 | `sprint-3.xml` | 3 | Scheduled job, roles and ACLs, reports, dashboard | Planned |
 
 ## Exporting a sprint
@@ -20,5 +20,5 @@ One update set per sprint, exported from the PDI once the sprint is finished.
 
 1. On the target instance, go to **System Update Sets > Retrieved Update Sets** and choose **Import Update Set from XML**.
 2. Import in sprint order: 1, then 2, then 3.
-3. Open each retrieved set, run **Preview Update Set**, resolve any problems, then **Commit Update Set**.
+3. The Sprint 2 set contains the flow and cross-scope privilege records. Open each retrieved set, run **Preview Update Set**, resolve any problems, then **Commit Update Set**.
 4. Load the [seed data](../seed-data/), which update sets do not carry.

@@ -4,9 +4,30 @@ All notable changes to this project are recorded here, one section per sprint.
 
 ## [Unreleased]
 
-### Sprint 2 (Oct 12 - 14, 2026), planned
-- Flow Designer flow: manager approval, task creation from templates, notifications
-- Script Include for due dates and a Business Rule that creates the Employee Asset record
+### Sprint 3 (Oct 15 - 16, 2026), planned
+- Roles and ACLs, reports and dashboard, packaging
+
+## Sprint 2 (Oct 12 - 15, 2026), complete
+
+### Added
+- Update set `Onboarding - Sprint 2`, exported as `update-sets/sprint-2.xml`
+- Flow **New Hire OnBoarding Flow**: Service Catalog trigger, hiring manager approval, rejection path (closes the request and emails the requester with the reason)
+- Task generation: looks up Onboarding Task Template rows for All and the requested department, loops over them, and creates a catalog task for each template whose Applies When condition matches the form answers
+- Script Include `OnboardingUtils` with `getDueDate()` and the custom flow action **Calculate Task Due Date** that wraps it
+- Emails: one to the hiring manager after the loop, one per task to its assignment group
+- Business Rule that creates an Employee Asset record (Laptop, Issued) when the "Issue Laptop" task closes, with a duplicate check
+- Business Rule that closes the requested item when its last task closes
+- Cross-scope privileges (auto-granted when the scripts first ran) captured in the update set
+- `docs/flow.md` and `scripts/` folders for the Script Include, flow action and Business Rules
+
+### Changed
+- Seed data and docs use the real choice values for Asset Type (`lp`, `mo`, `ac`, `sl`) and Status (`rq`, `is`, `rr`)
+
+### Verified
+- Engineering request with laptop, software and desk all Yes creates 8 tasks; all No creates 5
+- Tasks reach the right groups (IT Support, HR Operations, Facilities_Employee) with due dates 1 to 5 days before the start date
+- Closing "Issue Laptop" creates one Employee Asset record; closing it again creates no duplicate
+- The requested item closes when its last task closes
 
 ## Sprint 1 (Oct 10 - 11, 2026), complete
 

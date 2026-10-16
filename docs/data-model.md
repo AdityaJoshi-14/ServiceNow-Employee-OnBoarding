@@ -42,10 +42,10 @@ Display column: **Asset Type**
 | Column | Type | Notes |
 |---|---|---|
 | Employee | Reference > User | The new hire |
-| Asset Type | Choice | `laptop`, `monitor`, `access_card`, `software_license` |
+| Asset Type | Choice | Laptop (`lp`), Monitor (`mo`), Access Card (`ac`), Software License (`sl`) |
 | Serial Number | String (40) | |
 | Issued Date | Date | |
-| Status | Choice | `requested`, `issued`, `returned` |
+| Status | Choice | Requested (`rq`), Issued (`is`), Returned (`rr`) |
 | Onboarding Request | Reference > Requested Item | Links the asset to the originating request |
 
 ### Onboarding Task Template (`x_1901336_employ_0_onboarding_task_template`)
@@ -54,14 +54,14 @@ Display column: **Task Name**
 
 | Column | Type | Notes |
 |---|---|---|
-| Department | Choice | `all`, `engineering`, `hr`, `finance`, `sales`, `marketing` |
+| Department | Choice | All, Engineering, HR, Finance, Sales, Marketing |
 | Task Name | String (100) | |
 | Assigned Group | Reference > Group | Group that receives the task |
 | Due Days Before Start | Integer | Lead time before the hire's start date |
-| Applies When | Choice | `always`, `laptop_needed`, `software_needed`, `desk_needed` |
+| Applies When | Choice | Always, Laptop Needed, Software Needed, Desk Needed |
 | Active | True/False | Default true |
 
-A template row applies to a request when it is active, its department is `all` or matches the requested department, and its **Applies When** condition is met by the answers on the catalog form.
+A template row applies to a request when it is active, its department is All or matches the requested department, and its **Applies When** condition is met by the answers on the catalog form.
 
 ### Software Option (`x_1901336_employ_0_software_option`)
 
@@ -90,6 +90,7 @@ Display column: **Name**
 
 ### Behaviour
 
-- **Department** reads its choices from the Department field on Onboarding Task Template, so the form and the task rules share one source. The `all` choice means "every department" on the template table, so it is removed on load ([hide-all-department-option.js](../scripts/client-scripts/hide-all-department-option.js)) and rejected on submit ([reject-all-department.js](../scripts/client-scripts/reject-all-department.js)).
+- **Department** reads its choices from the Department field on Onboarding Task Template, so the form and the task rules share one source. The All choice means "every department" on the template table, so it is removed on load ([hide-all-department-option.js](../scripts/client-scripts/hide-all-department-option.js)) and rejected on submit ([reject-all-department.js](../scripts/client-scripts/reject-all-department.js)).
 - **Start Date** rejects dates in the past ([validate-start-date.js](../scripts/client-scripts/validate-start-date.js)).
 - **Laptop Type, Software List and Office Location** are shown and required by three Catalog UI Policies with Reverse if false, so they hide again when the answer goes back to No.
+- **Employee Asset** records are created by a Business Rule when the "Issue Laptop" task closes. See [flow.md](flow.md).
