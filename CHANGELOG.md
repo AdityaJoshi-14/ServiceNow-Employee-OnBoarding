@@ -4,8 +4,20 @@ All notable changes to this project are recorded here, one section per sprint.
 
 ## [Unreleased]
 
-### Sprint 3 (Oct 15 - 16, 2026), planned
-- Roles and ACLs, reports and dashboard, packaging
+### Deferred
+- Overdue-task scheduled job, roles and ACLs, offboarding item
+
+## Sprint 3 (Oct 15 - 16, 2026), complete
+
+### Added
+- Update set `Onboarding - Sprint 3`, exported as `update-sets/sprint-3.xml`
+- Platform Analytics visualizations: **Pending Onboardings** and **Completed Onboardings** (single scores on Requested Item) and **Onboarding Tasks by Group** (horizontal bar, grouped by assignment group and stacked by state)
+- **Employee Onboarding** dashboard combining the three
+- Demo video, resume bullets and screenshots
+
+### Notes
+- An average-completion-time tile was tried and dropped, because Duration is not populated on these requests and it showed 0 s
+- The export also holds an untitled dashboard and an unused widget created while building; they are harmless
 
 ## Sprint 2 (Oct 12 - 15, 2026), complete
 

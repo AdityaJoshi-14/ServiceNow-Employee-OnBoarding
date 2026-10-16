@@ -6,7 +6,7 @@
 
 ![ServiceNow](https://img.shields.io/badge/ServiceNow-Scoped_App-62D84E?logo=servicenow&logoColor=white)
 ![Status](https://img.shields.io/badge/status-in_progress-orange)
-![Sprints](https://img.shields.io/badge/sprints-2_of_3_complete-blue)
+![Sprints](https://img.shields.io/badge/sprints-3_of_3_complete-blue)
 ![License](https://img.shields.io/badge/license-MIT-lightgrey)
 
 </div>
@@ -25,7 +25,7 @@ Built as a self-directed project on a ServiceNow Personal Developer Instance (PD
 |---|---|---|---|
 | 1 | Oct 10 - 11, 2026 | Foundation and catalog item | Complete |
 | 2 | Oct 12 - 15, 2026 | Automation with Flow Designer | Complete |
-| 3 | Oct 15 - 16, 2026 | Security, reporting and publish | Planned |
+| 3 | Oct 15 - 16, 2026 | Reporting and publish | Complete |
 
 Full task list: [docs/sprint-plan.md](docs/sprint-plan.md) | History: [CHANGELOG.md](CHANGELOG.md)
 
@@ -139,7 +139,8 @@ More detail on exporting and importing: [update-sets/README.md](update-sets/READ
 - [x] Catalog item with variables, UI policies and date validation (Sprint 1)
 - [x] Approval, task creation and notifications in Flow Designer (Sprint 2)
 - [x] Script Include for due dates, asset record creation, request closure (Sprint 2)
-- [ ] Overdue reminders, roles and ACLs, reports and dashboard (Sprint 3)
+- [x] Reports and Platform Analytics dashboard (Sprint 3)
+- [ ] Overdue reminders, roles and ACLs (deferred)
 - [ ] Offboarding catalog item (stretch)
 - [ ] Incident management with SLA and AI-assisted routing (second project)
 
@@ -173,7 +174,12 @@ More detail on exporting and importing: [update-sets/README.md](update-sets/READ
 
 ![Completed flow execution](docs/screenshots/sprint2-flow-execution.png)
 
-More are added to [docs/screenshots/](docs/screenshots/) as each sprint completes. The dashboard comes with Sprint 3.
+More are added to [docs/screenshots/](docs/screenshots/) as each sprint completes. 
+### Sprint 3: dashboard
+
+![Employee Onboarding dashboard](docs/screenshots/sprint3-dashboard.png)
+
+Pending onboardings, completed onboardings, and tasks by assignment group stacked by state.
 
 ## Author
 

@@ -6,7 +6,7 @@ Start: Sat, Oct 10, 2026 | Finish: Fri, Oct 16, 2026
 |---|---|---|---|
 | 1 | Oct 10 - 11 | Foundation and catalog item | Complete |
 | 2 | Oct 12 - 15 | Automation with Flow Designer | Complete |
-| 3 | Oct 15 - 16 | Security, reporting and publish | Planned |
+| 3 | Oct 15 - 16 | Reporting and publish | Complete |
 
 If time runs short, cut in this order: offboarding, dashboard, scheduled job. The catalog item, flow and asset table are the core.
 
@@ -111,17 +111,17 @@ Create update set `Onboarding - Sprint 3` (Application = Employee Onboarding) be
 
 ### Day 6 (Thu, Oct 15): Reminders, security, reporting
 
-- [ ] Scheduled Job: email the assignment group about onboarding tasks past due
-- [ ] Roles and ACLs: HR sees all onboarding requests; IT and Facilities see only their own tasks
-- [ ] Reports: pending onboardings, average completion time, tasks by group
-- [ ] Dashboard combining the reports
-- [ ] Stretch: offboarding catalog item (collect assets, revoke access, close records)
+- [ ] Scheduled Job: email the assignment group about onboarding tasks past due (deferred)
+- [ ] Roles and ACLs: HR sees all onboarding requests; IT and Facilities see only their own tasks (deferred)
+- [x] Reports: pending onboardings, completed onboardings, tasks by group (average completion time dropped: Duration is not populated)
+- [x] Dashboard combining the reports
+- [ ] Stretch: offboarding catalog item (deferred)
 
 ### Day 7 (Fri, Oct 16): Package and publish
 
-- [ ] Mark `Onboarding - Sprint 3` Complete and export to XML
+- [x] Mark `Onboarding - Sprint 3` Complete and export to XML
 - [ ] Export final seed data
-- [ ] Add screenshots to the README
+- [x] Add screenshots to the README
 - [ ] Record a 2-3 minute demo video (submit request, approve, tasks created, asset record, dashboard)
 - [ ] Write resume bullets using real numbers from testing
 - [ ] Post on LinkedIn with the repo and demo links

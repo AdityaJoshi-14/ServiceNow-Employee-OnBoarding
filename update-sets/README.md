@@ -6,7 +6,7 @@ One update set per sprint, exported from the PDI once the sprint is finished.
 |---|---|---|---|
 | `sprint-1.xml` | 1 | Scoped app, three tables, catalog item, UI policies, client scripts | Complete |
 | `sprint-2.xml` | 2 | Flow, flow action, Script Include, Business Rules, cross-scope privileges | Complete |
-| `sprint-3.xml` | 3 | Scheduled job, roles and ACLs, reports, dashboard | Planned |
+| `sprint-3.xml` | 3 | Platform Analytics visualizations and the Employee Onboarding dashboard | Complete |
 
 ## Exporting a sprint
 
