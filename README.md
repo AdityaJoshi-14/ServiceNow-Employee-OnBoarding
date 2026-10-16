@@ -21,11 +21,11 @@ Built as a self-directed project on a ServiceNow Personal Developer Instance (PD
 
 ## Project Status
 
-| Sprint | Dates | Focus | Status |
+| Sprint| Focus | Status |
 |---|---|---|---|
-| 1 | Oct 10 - 11, 2026 | Foundation and catalog item | Complete |
-| 2 | Oct 12 - 15, 2026 | Automation with Flow Designer | Complete |
-| 3 | Oct 15 - 16, 2026 | Reporting and publish | Complete |
+| 1 | Foundation and catalog item | Complete |
+| 2 | Automation with Flow Designer | Complete |
+| 3 | Reporting and publish | Complete |
 
 Full task list: [docs/sprint-plan.md](docs/sprint-plan.md) | History: [CHANGELOG.md](CHANGELOG.md)
 
