@@ -22,7 +22,7 @@ Built as a self-directed project on a ServiceNow Personal Developer Instance (PD
 ## Project Status
 
 | Sprint| Focus | Status |
-|---|---|---|---|
+|---|---|---|
 | 1 | Foundation and catalog item | Complete |
 | 2 | Automation with Flow Designer | Complete |
 | 3 | Reporting and publish | Complete |
